@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require('cors');
 const News = require("./models/news.js");
 const fetchAndStoreNews = require("./fetchNews.js");
 const checkApiKey = require("./middleware/checkApiKey.js");
@@ -10,6 +11,9 @@ const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 console.log(process.env.MONGO_URI);
+
+// Use CORS middleware
+app.use(cors());
 
 app.use(checkApiKey);
 
