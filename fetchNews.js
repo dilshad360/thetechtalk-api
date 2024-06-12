@@ -1,6 +1,6 @@
 
 const axios = require('axios');
-const News = require('./models/news');
+// const News = require('./models/news');
 const cron = require('node-cron');
 const { newsArrayTemp }  = require('./const.js');
 
