@@ -3,12 +3,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const News = require("./models/news.js");
 const fetchAndStoreNews = require("./fetchNews.js");
+const checkApiKey = require("./middleware/checkApiKey.js");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 console.log(process.env.MONGO_URI);
+
+app.use(checkApiKey);
 
 mongoose
     .connect(MONGO_URI, {

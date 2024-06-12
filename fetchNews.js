@@ -14,7 +14,6 @@ async function fetchAndStoreNews() {
         dropNewsCollection();
 
         await News.insertMany(newsArray);
-
         console.log("News fetched and stored successfully.");
     } catch (error) {
         console.error("Error fetching news:", error);
