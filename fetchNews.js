@@ -1,8 +1,7 @@
 
 const axios = require('axios');
-// const News = require('./models/news');
-const cron = require('node-cron');
 const { newsArrayTemp }  = require('./const.js');
+const News   = require('./models/news.js');
 
 
 const NEWS_API_KEY = process.env.NEWS_API_KEY;
@@ -44,10 +43,5 @@ async function dropNewsCollection() {
 
 
 
-// Schedule the task to run every 6 hours
-cron.schedule('0 */6 * * *', fetchAndStoreNews);
-
-// Fetch news immediately when the app starts
-fetchAndStoreNews();
 
 module.exports = fetchAndStoreNews;

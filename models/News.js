@@ -1,4 +1,3 @@
-
 const { Schema, model } = require('mongoose');
 
 const newsSchema = new Schema({
