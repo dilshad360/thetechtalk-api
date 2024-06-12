@@ -33,7 +33,7 @@ app.get('/api/getnews', async (req, res) => {
 });
 
 
-app.get('/api/getnews', async (req, res) => {
+app.get('/api/test', async (req, res) => {
     res.status(201).json("working");
 });
 
