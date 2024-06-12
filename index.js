@@ -18,6 +18,11 @@ mongoose.connect(MONGO_URI, {
     console.error('Error connecting to MongoDB', err);
 });
 
+app.get('/', async (req, res) => {
+    res.status(201).json("working");
+    res.send('working');
+});
+
 
 app.get('/api/getnews', async (req, res) => {
 
@@ -32,10 +37,6 @@ app.get('/api/getnews', async (req, res) => {
     }
 });
 
-
-app.get('/api/test', async (req, res) => {
-    res.status(201).json("working");
-});
 
 
 app.listen(PORT, () => {
