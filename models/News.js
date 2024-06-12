@@ -1,4 +1,4 @@
-// models/News.js
+
 const { Schema, model } = require('mongoose');
 
 const newsSchema = new Schema({
