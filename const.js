@@ -1,4 +1,4 @@
-export const newsArrayTemp = [
+const newsArrayTemp = [
     {
         "_id": "666938a8623be31a43678684",
         "title": "BeFakeisDonw, the buzziest app of 2022, has been bought by a mobile game publisher",
@@ -120,3 +120,5 @@ export const newsArrayTemp = [
         "__v": 0
     }
 ];
+
+module.exports = { newsArrayTemp };

@@ -1,8 +1,8 @@
-import 'dotenv/config';
-import axios from 'axios';
-import News from './models/news.js';
-import cron from 'node-cron';
-import { newsArrayTemp }  from './const.js';
+
+const axios = require('axios');
+const News = require('./models/news.js');
+const cron = require('node-cron');
+const { newsArrayTemp }  = require('./const.js');
 
 
 const NEWS_API_KEY = process.env.NEWS_API_KEY;
@@ -50,4 +50,4 @@ cron.schedule('0 */6 * * *', fetchAndStoreNews);
 // Fetch news immediately when the app starts
 fetchAndStoreNews();
 
-export default fetchAndStoreNews;
+module.exports = fetchAndStoreNews;

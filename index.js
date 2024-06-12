@@ -1,13 +1,16 @@
-import 'dotenv/config';
-import express from 'express';
-import mongoose from 'mongoose';
-import News from './models/news.js';
-import './fetchNews.js';
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const News = require('./models/news.js');
+require('./fetchNews.js');
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
+
+
+console.log(process.env.MONGO_URI)
 
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
@@ -20,12 +23,10 @@ mongoose.connect(MONGO_URI, {
 
 app.get('/', async (req, res) => {
     res.status(201).json("working");
-    res.send('working');
 });
 
 
 app.get('/api/getnews', async (req, res) => {
-
     try {
         const data = await News.find();
         if(data.length===0 ){

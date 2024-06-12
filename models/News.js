@@ -1,5 +1,5 @@
 // models/News.js
-import { Schema, model } from 'mongoose';
+const { Schema, model } = require('mongoose');
 
 const newsSchema = new Schema({
     title: String,   
@@ -12,4 +12,4 @@ const newsSchema = new Schema({
     source_icon: String,
 });
 
-export default model('News', newsSchema);
+module.exports = model('News', newsSchema);
