@@ -1,7 +1,7 @@
 
 const axios = require('axios');
 const { newsArrayTemp }  = require('./const.js');
-const News   = require('./models/news');
+const News   = require('./models/news.js');
 
 
 const NEWS_API_KEY = process.env.NEWS_API_KEY;

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const News = require('./models/news');
+const News = require('./models/news.js');
 
 
 const app = express();
